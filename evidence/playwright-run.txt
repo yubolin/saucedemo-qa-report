@@ -1,0 +1,24 @@
+
+Running 13 tests using 3 workers
+
+(node:136879) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:136873) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:136872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 tests/known-defects.spec.js:5:1 › BUG-01 problem_user: product images should be unique (486ms)
+  ✓   2 tests/shop.spec.js:5:1 › shows 6 products (490ms)
+  ✓   5 tests/shop.spec.js:6:1 › sorts by price low to high (386ms)
+  ✓   3 tests/auth.spec.js:3:1 › standard user can log in and log out (1.3s)
+  ✓   6 tests/shop.spec.js:10:1 › sorts by name Z to A (438ms)
+  ✓   7 tests/auth.spec.js:10:1 › locked out user sees an error (315ms)
+  ✓   8 tests/shop.spec.js:15:1 › add and remove items updates cart badge (474ms)
+  ✓   9 tests/auth.spec.js:14:1 › empty credentials are rejected (341ms)
+  ✓  11 tests/auth.spec.js:18:1 › inventory is protected without a session (309ms)
+  ✓  10 tests/shop.spec.js:22:1 › complete checkout with correct total (702ms)
+  ✓  12 tests/shop.spec.js:35:1 › checkout requires first name (594ms)
+  ✘   4 tests/known-defects.spec.js:11:1 › BUG-03 problem_user: last name field keeps typed value (5.5s)
+  ✘  13 tests/known-defects.spec.js:20:1 › BUG-06 standard_user: checkout with empty cart should be blocked (5.5s)
+
+  13 passed (12.0s)

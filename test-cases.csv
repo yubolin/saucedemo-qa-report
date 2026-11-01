@@ -1,0 +1,22 @@
+ID,Area,Title,Steps,Expected,Result (standard_user unless noted),Automated
+TC-01,Login,Valid login,Enter standard_user / secret_sauce; Login,Inventory page opens,Pass,Yes
+TC-02,Login,Locked-out user,Login as locked_out_user,Error "user has been locked out",Pass,Yes
+TC-03,Login,Empty credentials,Click Login with empty fields,"Error ""Username is required""",Pass,Yes
+TC-04,Login,Wrong password,standard_user / wrong,Error message shown,Pass,No
+TC-05,Security,Deep link without session,Open /inventory.html logged out,Redirect to login with error,Pass,Yes
+TC-06,Login,Logout,Menu > Logout,Return to login page,Pass,Yes
+TC-07,Inventory,Product list,Open inventory,6 products with name/price/image,Pass,Yes
+TC-08,Inventory,Product images (problem_user),Login as problem_user,Each product shows its own image,FAIL - BUG-01,Yes
+TC-09,Sorting,Price low to high,Select Price (low to high),Ascending prices,Pass,Yes
+TC-10,Sorting,Name Z to A,Select Name (Z to A),Descending names,Pass,Yes
+TC-11,Sorting,Sorting (problem_user),Select Price low-high as problem_user,List reorders,FAIL - BUG-02,No
+TC-12,Sorting,Sorting (error_user),Select Name Z-A as error_user,List reorders without error,FAIL - BUG-04,No
+TC-13,Cart,Add/remove updates badge,Add 2 items; remove 1,Badge 2 then 1,Pass,Yes
+TC-14,Cart,Add all items (problem_user),Click every Add to cart,Badge shows 6,FAIL - BUG-05,No
+TC-15,Checkout,Happy path,Add backpack + bike light; checkout; finish,Item total $39.98; confirmation,Pass,Yes
+TC-16,Checkout,Required first name,Continue with empty form,"Error ""First Name is required""",Pass,Yes
+TC-17,Checkout,Last name input (problem_user),Type first and last name,Each field keeps its value,FAIL - BUG-03,Yes
+TC-18,Checkout,Empty cart checkout,Checkout with empty cart,Checkout blocked or warned,FAIL - BUG-06,Yes
+TC-19,Checkout,Whitespace / non-numeric input,"Enter "" "" names and ""abc"" postal code",Validation rejects,Observation - accepted (OBS-01),No
+TC-20,Visual,Prices (visual_user),Compare prices with standard_user,Same prices,FAIL - BUG-07,No
+TC-21,Performance,Login time (performance_glitch_user),Measure login,Comparable to standard_user,Not measured reliably (OBS-02),No
